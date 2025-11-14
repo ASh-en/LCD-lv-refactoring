@@ -1,0 +1,126 @@
+###########################################################################
+# .gitignore for Keil MDK-ARM + VSCode + EIDE (Embedded IDE)
+#
+# 适用范围：
+#   本模板适用于嵌入式开发项目，开发环境包括：
+#     - Keil MDK-ARM / uVision 工程
+#     - VSCode 作为主编辑器
+#     - VSCode 的 EIDE 插件用于工程管理与编译
+#
+# 特点：
+#   - 忽略 Keil 的编译产物、临时文件、自动生成文件；
+#   - 忽略 EIDE 插件生成的工程缓存、构建文件；
+#   - 忽略 VSCode 本地配置文件；
+#   - 保留源代码 (.c/.h)、配置 (.json)、文档等对版本管理有意义的内容。
+#
+# 如需定制（保留或忽略某些文件），可根据项目需求修改。
+###########################################################################
+
+#############################
+# Keil MDK-ARM / uVision
+#############################
+
+# Keil 编译生成的二进制文件
+*.axf
+*.elf
+*.hex
+*.bin
+*.out
+
+# Keil 中间文件与编译缓存
+*.o
+*.d
+*.crf
+*.htm
+*.map
+*.lst
+*.sct
+*.lnp
+*.plg
+*.scr
+*.tra
+
+# Keil 自动生成的工程配置文件（如不希望忽略可去掉）
+*.uvoptx
+*.uvprojx.bak
+*.uvopt
+*.uvproj
+*.dep
+*.bak
+
+# Keil 输出目录（不同项目路径可能包含 Objects/ Listings/）
+Objects/
+OBJ/
+Listings/
+
+#############################
+# EIDE (VSCode Embedded IDE)
+#############################
+
+# EIDE 工作区及用户配置，不需要提交
+eide.json
+eide.lock
+.project
+.cproject
+.settings/
+
+# EIDE 缓存与构建目录
+.eide/
+.eide/build/
+.eide/cache/
+.eide/temp/
+
+# EIDE 默认 build 输出
+build/
+Build/
+Debug/
+Release/
+out/
+
+# 如果 EIDE 自动生成 Keil 工程，则一般不建议提交这些文件
+# 若你想与队友共享 Keil 工程结构，可删除以下行
+*.uvprojx
+*.uvoptx
+
+#############################
+# VSCode 通用忽略
+#############################
+
+# VSCode 本地环境配置
+.vscode/
+*.code-workspace
+
+#############################
+# C/C++ 通用文件
+#############################
+
+# 通用编译输出
+*.obj
+*.exe
+*.dll
+*.so
+
+# CMake / Make 中间文件（如项目不使用可删除）
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+#############################
+# 系统文件 / 临时文件
+#############################
+
+*.tmp
+*.log
+*.swp
+*.cache
+
+# Windows / macOS 系统文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+###########################################################################
+# 结束
+###########################################################################

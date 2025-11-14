@@ -1,0 +1,2 @@
+1.移植汉字库文件 需要修改 ffconf.h 文件中的  #define _CODE_PAGE         936
+2.保存数据前要先注销SD卡
